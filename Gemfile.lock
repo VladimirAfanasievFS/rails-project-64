@@ -229,6 +229,14 @@ GEM
     slim_lint (0.24.0)
       rubocop (>= 1.0, < 2.0)
       slim (>= 3.0, < 6.0)
+    slimcop (0.18.0)
+      rubocop (>= 1.49)
+      slimi (>= 0.5.1)
+      templatecop
+    slimi (0.7.4)
+      temple
+      thor
+      tilt
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -239,6 +247,10 @@ GEM
     sqlite3 (1.6.3-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    templatecop (0.4.0)
+      parallel
+      parser
+      rubocop (>= 0.87)
     temple (0.10.2)
     thor (1.2.2)
     tilt (2.2.0)
@@ -293,6 +305,7 @@ DEPENDENCIES
   sentry-ruby
   slim
   slim_lint
+  slimcop
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

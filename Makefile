@@ -1,2 +1,2 @@
 lint:
-		slim-lint app/views/
+		slimcop app/views/ -a
