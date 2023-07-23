@@ -2,7 +2,7 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 3.2.2
   SuggestExtensions: false
-  
+
 require: rubocop-rails
 
 Style/StringLiterals:
@@ -18,4 +18,3 @@ Style/Documentation:
 
 Layout/LineLength:
   Max: 120
-
