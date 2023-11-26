@@ -1,0 +1,11 @@
+.mt-5 # app/views/posts/index.html.slim
+
+h1 Posts
+
+ul
+  - @posts.each do |post|
+    li
+      = link_to post.title, post_path(post)
+      |  by #{post.body} on #{post.created_at.strftime('%B %e, %Y')}
+
+= link_to 'create', new_post_path

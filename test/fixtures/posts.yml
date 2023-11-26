@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id          :integer          not null, primary key
+#  body        :text
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer          not null
+#
+# Indexes
+#
+#  index_posts_on_category_id  (category_id)
+#
+# Foreign Keys
+#
+#  category_id  (category_id => categories.id)
+#
+
+one:
+  title: MyString
+  body: MyText
+
+two:
+  title: MyString
+  body: MyText
