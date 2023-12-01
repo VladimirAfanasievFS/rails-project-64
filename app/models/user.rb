@@ -7,6 +7,7 @@
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  name                   :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -24,5 +25,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts, foreign_key: 'creator_id', dependent: :destroy, inverse_of: :user
+
+  has_many :posts, foreign_key: 'creator_id', dependent: :destroy, inverse_of: :creator
 end

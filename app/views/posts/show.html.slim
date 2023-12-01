@@ -1,4 +1,15 @@
-= simple_form_for @post do |f|
-  = f.input :title
-  = f.input :body
-  = f.submit
+.mt-5 Posts#show
+
+div = @post.title
+div = @post.body
+div = @post.category.name
+div = @post.creator&.email
+
+= link_to 'update', edit_post_path(@post)
+br
+= link_to "All Posts", posts_path
+br
+br
+br
+
+= button_to "Destroy", post_path(@post), method: :delete

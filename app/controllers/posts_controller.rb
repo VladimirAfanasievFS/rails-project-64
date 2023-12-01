@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    pp @post
     @post
   end
 
@@ -16,16 +17,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    pp @post
     @post
   end
 
   def create
-    # binding.pry
-    @post = Post.new(post_params)
 
-    @post.build_category(category_params)
+    @post = current_user.posts.new(post_params)
 
-    pp @post.errors
     if @post.save
       redirect_to post_path(@post)
     else
@@ -34,6 +33,8 @@ class PostsController < ApplicationController
   end
 
   def update
+    pp post_params
+
     if @post.update(post_params)
       flash[:success] = 'Article was successfully updated'
       redirect_to post_path(@post)
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
   def destroy
     if @post.destroy
       flash[:success] = 'article was successfully deleted'
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash[:failure] = 'Article cannot be deleted'
       # Отрисовывается форма создания, все параметры остаются
@@ -60,10 +61,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :category_id)
   end
 
-  def category_params
-    params.require(:post).require(:category).permit(:name)
-  end
 end

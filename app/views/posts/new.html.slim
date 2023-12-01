@@ -4,8 +4,6 @@
   = f.input :title
   = f.input :body
 
-  = f.simple_fields_for :category do |c|
-    = c.input :name
-  / = f.input :creator
+  = f.association :category, value_method: :id, label_method: :name
 
   = f.button :submit, 'Create Post'
