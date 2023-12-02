@@ -1,0 +1,13 @@
+.card.mt-2.rounded-0.border-2
+    .card-header.border-0 #{comment.creator.email}
+    .card-body.border-0 #{comment.content}
+    .card-footer.border-0
+      = simple_form_for PostComment.new(parent_id: comment.id, post_id: comment.post.id),
+        url: comments_path do |post_comment|
+        = post_comment.input :content, label: 'Введи комментарий'
+        = post_comment.input :parent_id, as: :hidden
+        = post_comment.input :post_id, as: :hidden
+        = post_comment.button :submit, 'Ответить', class: 'btn btn-secondary'
+      - comment.children.each do |children_comment|
+        = render partial: 'posts/comments', locals: { comment: children_comment }
+div ----------------------

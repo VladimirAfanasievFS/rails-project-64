@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to posts_path
     else
       render :new, status: :unprocessable_entity
     end

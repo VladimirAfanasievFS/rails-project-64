@@ -1,9 +1,19 @@
 nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
   .container-fluid
     span.navbar-toggler-icon
-    ul.navbar-nav.ml-auto.mb-2.mb-md-0
-      li.nav-item
-        = link_to 'Войти', new_user_session_path
-      li.nav-item.ms-4
-        = link_to 'Зарегистрироваться', new_user_registration_path
+    = link_to 'Главная', posts_path
 
+    - if user_signed_in?
+      ul.navbar-nav.ml-auto.mb-2.mb-md-0
+        li
+          .badge.badge-secondary = current_user.email.to_s
+        li.nav-item.ms-4
+          = link_to 'Создать пост', new_post_path
+        li.nav-item
+          = button_to 'Выйти', destroy_user_session_path, method: :delete
+    - else
+      ul.navbar-nav.ml-auto.mb-2.mb-md-0
+        li.nav-item
+          = link_to 'Войти', new_user_session_path
+        li.nav-item.ms-4
+          = link_to 'Зарегистрироваться', new_user_registration_path

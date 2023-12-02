@@ -5,7 +5,13 @@ h1 Posts
 ul
   - @posts.each do |post|
     li
-      = link_to post.title, post_path(post)
-      |  by #{post.body} on #{post.created_at.strftime('%B %e, %Y')}
+      .border.border-1
+        h5.mb-1
+        = link_to post.title, post_path(post), class: 'text-decoration-none'
+        small
+        |  on #{post.created_at.strftime('%B %e, %Y')}
+        p.mb-1= post.body
+        span.badge.bg-primary =post.category.name
+      div __________________________________________________________
 
 = link_to 'create', new_post_path

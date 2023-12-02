@@ -1,10 +1,24 @@
 .mt-5 Posts#show
 
-div = @post.title
-div = @post.body
-div = @post.category.name
-div = @post.creator&.email
-
+.border.border-1
+  h5.mb-1
+  = link_to @post.title, post_path(@post), class: 'text-decoration-none'
+  small
+  |  on #{@post.created_at.strftime('%B %e, %Y')}
+  p.mb-1 = @post.body
+  span.badge.bg-primary = @post.category.name
+= simple_form_for PostComment.new, url: comments_path do |comment|
+  = comment.input :content, label: 'Введи комментарий'
+  = comment.hidden_field :post_id, value: @post.id
+  = comment.button :submit, 'Add Comment', class: 'btn btn-primary'
+- @post.post_comments.arrange.each do |comment, nested_comments|
+  = render partial: 'posts/comments', locals: { comment: comment, nested_comments: nested_comments }
+br
+br
+br
+= link_to 'show comments', comment_path(@post)
+br
+br
 = link_to 'update', edit_post_path(@post)
 br
 = link_to "All Posts", posts_path
