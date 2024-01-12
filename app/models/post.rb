@@ -24,7 +24,7 @@
 #
 class Post < ApplicationRecord
   belongs_to :category
-  belongs_to :creator, class_name: 'User'
+  belongs_to :user, class_name: 'User'
 
   has_many :post_comments, dependent: :destroy, inverse_of: :post
   has_many :post_likes, dependent: :destroy, inverse_of: :post

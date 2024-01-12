@@ -19,7 +19,7 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create post_like' do
     assert_difference('PostLike.count') do
-      post post_likes_url, params: { post_like: { creator_id: @post_like.creator_id, post_id: @post_like.post_id } }
+      post post_likes_url, params: { post_like: { user_id: @post_like.user_id, post_id: @post_like.post_id } }
     end
 
     assert_redirected_to post_like_url(PostLike.last)
@@ -37,7 +37,7 @@ class PostLikesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update post_like' do
     patch post_like_url(@post_like),
-          params: { post_like: { creator_id: @post_like.creator_id, post_id: @post_like.post_id } }
+          params: { post_like: { user_id: @post_like.user_id, post_id: @post_like.post_id } }
     assert_redirected_to post_like_url(@post_like)
   end
 

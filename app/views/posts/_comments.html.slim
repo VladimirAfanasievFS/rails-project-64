@@ -1,5 +1,5 @@
 .card.mt-2.rounded-0.border-2
-    .card-header.border-0 #{comment.creator.email}
+    .card-header.border-0 #{comment.user.email}
     .card-body.border-0 #{comment.content}
     .card-footer.border-0
       = simple_form_for PostComment.new(parent_id: comment.id, post_id: comment.post.id),
