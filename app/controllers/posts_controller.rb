@@ -1,68 +1,40 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_post, only: %i[show edit update destroy]
-
   def index
-    @posts = Post.all
+    @posts = Post.includes(:creator).order(id: :desc)
   end
 
   def show
-    pp @post
-    @post
+    @post = Post.find params[:id]
+    @comments = @post.comments.includes(:user).arrange(order: { created_at: :desc })
+    @form_comment = current_user&.comments&.build
+    @user_like = @post.likes.find_by(user: current_user)
   end
 
   def new
+    authenticate_user!
     @post = Post.new
-  end
-
-  def edit
-    pp @post
-    @post
+    @categories = Category.all
   end
 
   def create
-
-    @post = current_user.posts.new(post_params)
+    authenticate_user!
+    @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to posts_path
+      flash[:success] = t('.success')
+      redirect_to @post
     else
+      @categories = Category.all
+      flash.now[:error] = t('.unprocessable_entity')
       render :new, status: :unprocessable_entity
-    end
-  end
-
-  def update
-    pp post_params
-
-    if @post.update(post_params)
-      flash[:success] = 'Article was successfully updated'
-      redirect_to post_path(@post)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    if @post.destroy
-      flash[:success] = 'article was successfully deleted'
-      redirect_to posts_path
-    else
-      flash[:failure] = 'Article cannot be deleted'
-      # Отрисовывается форма создания, все параметры остаются
-      redirect_to post_path(@post)
     end
   end
 
   private
 
-  def set_post
-    @post = Post.find(params[:id])
-  end
-
   def post_params
     params.require(:post).permit(:title, :body, :category_id)
   end
-
 end

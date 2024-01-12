@@ -1,37 +1,31 @@
-.mt-5 Posts#show
-
-.border.border-1
-  h5.mb-1
-  = link_to @post.title, post_path(@post), class: 'text-decoration-none'
-  small
-  |  on #{@post.created_at.strftime('%B %e, %Y')}
-  p.mb-1 = @post.body
-  span.badge.bg-primary = @post.category.name
-  - @like = @post.post_likes.find_by(user_id: current_user.id)
-  - if @like
-      = button_to 'unLike', post_like_path(@like), method: :delete
-  -else
-    = simple_form_for PostLike.new do |like|
-      = like.hidden_field :post_id, value: @post.id
-      = like.button :submit, 'Like', class: 'btn btn-primary'
-
-= simple_form_for PostComment.new, url: comments_path do |comment|
-  = comment.input :content, label: 'Введи комментарий'
-  = comment.hidden_field :post_id, value: @post.id
-  = comment.button :submit, 'Add Comment', class: 'btn btn-primary'
-- @post.post_comments.arrange.each do |comment, nested_comments|
-  = render partial: 'posts/comments', locals: { comment: comment, nested_comments: nested_comments }
-br
-br
-br
-= link_to 'show comments', comment_path(@post)
-br
-br
-= link_to 'update', edit_post_path(@post)
-br
-= link_to "All Posts", posts_path
-br
-br
-br
-
-= button_to "Destroy", post_path(@post), method: :delete
+ol.breadcrumb
+  li.breadcrumb-item
+    = link_to t('.all_posts'), root_path
+  li.breadcrumb-item.active = @post.category.name
+.row.justify-content-center.mt-4
+  article.col-12
+    h1.mb-4.mb-lg-5 = @post.title
+    p = simple_format(@post.body)
+    .d-flex.justify-content-between.mt-5
+      #post-section
+        span.me-2 = @post.creator.email
+        span = distance_of_time_in_words_to_now(@post.created_at)
+      #likes-section
+        span.me-2 = @post.likes.size
+        - if !user_signed_in?
+          i.bi.bi-hand-thumbs-up
+        - elsif @user_like
+          = link_to post_like_path(@post, @user_like), class: 'link-dark', data: { turbo_method: :delete } do
+            i.bi.bi-hand-thumbs-up-fill
+        - else
+          = link_to post_likes_path(@post), class: 'link-dark', data: { turbo_method: :post } do
+            i.bi.bi-hand-thumbs-up
+.lead.mt-3#comment-section
+  span = t('.comments')
+  - if user_signed_in?
+    = simple_form_for @form_comment, url: post_comments_path(@post) do |f|
+      = f.input :content, as: :text, label: false
+      = f.input :parent_id, as: :hidden, input_html: { value: nil }
+      = f.button :submit, class: 'btn-primary mt-2'
+  - @comments.each do |comment, children|
+    = render 'posts/children_comments', comment:, children:, post: @post, form_comment: @form_comment

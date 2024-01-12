@@ -1,0 +1,35 @@
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension
+/usr/local/bin/ruby extconf.rb
+checking for whether -std=gnu99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-modth8 sitelibdir\=./.gem.20240112-279-modth8 clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-modth8 sitelibdir\=./.gem.20240112-279-modth8
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+compiling constants.c
+compiling lexer.c
+compiling lexstate.c
+compiling location.c
+compiling main.c
+compiling parser.c
+compiling parserstate.c
+compiling ruby_objs.c
+compiling unescape.c
+linking shared-object rbs_extension.so
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-modth8 sitelibdir\=./.gem.20240112-279-modth8 install
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+/usr/bin/install -c -m 0755 rbs_extension.so ./.gem.20240112-279-modth8
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-modth8 sitelibdir\=./.gem.20240112-279-modth8 clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/rbs-2.8.4/ext/rbs_extension'

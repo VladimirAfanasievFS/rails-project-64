@@ -1,31 +1,11 @@
 # frozen_string_literal: true
 
-# == Schema Information
-#
-# Table name: posts
-#
-#  id          :integer          not null, primary key
-#  body        :text
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer          not null
-#  user_id     :integer          not null
-#
-# Indexes
-#
-#  index_posts_on_category_id  (category_id)
-#  index_posts_on_user_id      (user_id)
-#
-# Foreign Keys
-#
-#  category_id  (category_id => categories.id)
-#  user_id      (user_id => users.id)
-#
 class Post < ApplicationRecord
-  belongs_to :category
-  belongs_to :user, class_name: 'User'
+  has_many :comments, class_name: 'PostComment', dependent: :destroy
+  has_many :likes, class_name: 'PostLike', dependent: :destroy
+  belongs_to :creator, class_name: 'User'
+  belongs_to :category, inverse_of: :posts
 
-  has_many :post_comments, dependent: :destroy, inverse_of: :post
-  has_many :post_likes, dependent: :destroy, inverse_of: :post
+  validates :title, presence: true, length: { minimum: 5, maximum: 255 }
+  validates :body, presence: true, length: { minimum: 200, maximum: 4000 }
 end

@@ -1,2 +1,35 @@
 lint:
-		slimcop app/views/ -a
+	bundle exec rubocop
+	bundle exec slim-lint app/views/
+
+lint-fix:
+	bundle exec rubocop -A
+
+.PHONY: test
+
+setup: install build prepare-db
+
+install:
+	bin/setup
+	yarn
+
+prepare-db:
+	bin/rails db:migrate
+	bin/rails db:fixtures:load
+
+start:
+	rm tmp/pids/server.pid || true
+	RAILS_ENV=development bin/rails server -p 3000 -b 0.0.0.0
+	# bin/dev
+
+watch-js:
+	yarn build --watch
+watch-css:
+	yarn build:css --watch
+
+check: test lint
+
+test:
+	RAILS_ENV=test bin/rails test
+
+ci: setup check

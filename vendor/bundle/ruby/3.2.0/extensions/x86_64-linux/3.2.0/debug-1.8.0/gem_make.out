@@ -1,0 +1,27 @@
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+/usr/local/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-tz5una sitelibdir\=./.gem.20240112-279-tz5una clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-tz5una sitelibdir\=./.gem.20240112-279-tz5una
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-tz5una sitelibdir\=./.gem.20240112-279-tz5una install
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+/usr/bin/install -c -m 0755 debug.so ./.gem.20240112-279-tz5una/debug
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-tz5una sitelibdir\=./.gem.20240112-279-tz5una clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug'

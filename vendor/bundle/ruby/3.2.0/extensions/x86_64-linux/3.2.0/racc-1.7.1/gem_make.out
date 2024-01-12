@@ -1,0 +1,28 @@
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+/usr/local/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-iujq4a sitelibdir\=./.gem.20240112-279-iujq4a clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-iujq4a sitelibdir\=./.gem.20240112-279-iujq4a
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+compiling cparse.c
+linking shared-object racc/cparse.so
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-iujq4a sitelibdir\=./.gem.20240112-279-iujq4a install
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20240112-279-iujq4a/racc
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-iujq4a sitelibdir\=./.gem.20240112-279-iujq4a clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse'

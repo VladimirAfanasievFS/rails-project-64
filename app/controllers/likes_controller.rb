@@ -1,35 +1,22 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
-  before_action :set_post_like, only: %i[destroy]
-
   def create
-    @post_like = current_user.post_likes.new(post_like_params)
+    authenticate_user!
+    post = Post.find(params[:post_id])
 
-    if @post_like.save
-      redirect_to @post_like.post
-    else
-      format.html { render :new, status: :unprocessable_entity }
-    end
-  end
-
-  def destroy
-    post = @post_like.post
-    @post_like.destroy
+    post.likes.find_or_create_by(user: current_user)
 
     redirect_to post
   end
 
-  private
+  def destroy
+    authenticate_user!
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_post_like
-    @post_like = PostLike.find(params[:id])
-  end
+    like = PostLike.find_by(id: params[:id], user: current_user)
+    post = Post.find(params[:post_id])
 
-  # Only allow a list of trusted parameters through.
-  def post_like_params
-    pp params
-    params.require(:post_like).permit(:post_id)
+    like&.destroy
+    redirect_to post
   end
 end

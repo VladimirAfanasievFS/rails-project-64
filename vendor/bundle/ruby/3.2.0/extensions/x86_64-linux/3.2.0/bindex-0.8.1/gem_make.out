@@ -1,0 +1,26 @@
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/local/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-eq2j3p sitelibdir\=./.gem.20240112-279-eq2j3p clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-eq2j3p sitelibdir\=./.gem.20240112-279-eq2j3p
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-eq2j3p sitelibdir\=./.gem.20240112-279-eq2j3p install
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20240112-279-eq2j3p/skiptrace/internal
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-eq2j3p sitelibdir\=./.gem.20240112-279-eq2j3p clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace'

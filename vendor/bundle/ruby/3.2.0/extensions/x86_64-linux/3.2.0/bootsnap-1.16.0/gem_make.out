@@ -1,0 +1,26 @@
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/usr/local/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-xnhtez sitelibdir\=./.gem.20240112-279-xnhtez clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-xnhtez sitelibdir\=./.gem.20240112-279-xnhtez
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-xnhtez sitelibdir\=./.gem.20240112-279-xnhtez install
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20240112-279-xnhtez/bootsnap
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+
+current directory: /project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240112-279-xnhtez sitelibdir\=./.gem.20240112-279-xnhtez clean
+make[1]: Entering directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'
+make[1]: Leaving directory '/project/code/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap'

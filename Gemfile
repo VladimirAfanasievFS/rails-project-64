@@ -6,13 +6,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.6'
+gem 'rails', '~> 7.1.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6.0'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem 'jsbundling-rails'
@@ -30,7 +30,7 @@ gem 'cssbundling-rails'
 gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0'
+# gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -44,38 +44,24 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-gem 'slim'
-gem 'slim_lint'
-
-gem 'minitest-power_assert'
-
-gem 'sentry-rails'
-gem 'sentry-ruby'
-
-gem 'faker'
-gem 'rubocop', require: false
-gem 'rubocop-rails', require: false
-gem 'simple_form'
 # Use Sass to process CSS
 # gem "sassc-rails"
-gem 'slimcop'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem 'ancestry'
-gem 'pry', '~> 0.14.2'
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'solargraph'
-  gem 'solargraph-rails'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
-  gem 'annotate'
+  gem 'i18n-debug'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -86,15 +72,22 @@ group :development do
   # gem "spring"
 end
 
-group :production do
-  gem 'pg'
-end
-
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'faker'
+  gem 'minitest-power_assert'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'slim_lint'
 end
 
-gem 'devise', '~> 4.9'
+gem 'ancestry'
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
+gem 'sentry-rails'
+gem 'sentry-ruby'
+gem 'simple_form'
+gem 'slim-rails'
