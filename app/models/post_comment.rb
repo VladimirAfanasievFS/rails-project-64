@@ -9,23 +9,23 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  creator_id :integer
 #  post_id    :integer          not null
+#  user_id    :integer
 #
 # Indexes
 #
-#  index_post_comments_on_ancestry    (ancestry)
-#  index_post_comments_on_creator_id  (creator_id)
-#  index_post_comments_on_post_id     (post_id)
+#  index_post_comments_on_ancestry  (ancestry)
+#  index_post_comments_on_post_id   (post_id)
+#  index_post_comments_on_user_id   (user_id)
 #
 # Foreign Keys
 #
-#  creator_id  (creator_id => users.id)
-#  post_id     (post_id => posts.id)
+#  post_id  (post_id => posts.id)
+#  user_id  (user_id => users.id)
 #
 class PostComment < ApplicationRecord
   has_ancestry
 
-  belongs_to :creator, class_name: 'User'
+  belongs_to :user
   belongs_to :post
 end
